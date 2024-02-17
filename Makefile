@@ -1,8 +1,8 @@
 start:
-    docker compose up -d
+	docker compose up -d
 
 stop:
-    docker compose stop
-    
+	docker compose stop
+
 restart:
-    docker compose restart
+	docker compose restartcd
