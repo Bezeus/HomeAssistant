@@ -5,4 +5,4 @@ stop:
 	docker compose stop
 
 restart:
-	docker compose restartcd
+	docker compose restart
