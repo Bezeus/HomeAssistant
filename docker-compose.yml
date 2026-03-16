@@ -1,5 +1,3 @@
-version: '3.0'
-
 services:
   homeassistant:
     container_name: homeassistant
@@ -143,3 +141,14 @@ services:
     volumes:
       - ./fileeditor:/config
       - ./homeassistant:/hass-config
+
+  matter-server:
+    image: ghcr.io/home-assistant-libs/python-matter-server:stable
+    container_name: matter-server
+    restart: unless-stopped
+    network_mode: host
+    security_opt:
+      - apparmor:unconfined
+    volumes:
+      - ./matter-config:/data
+      - /run/dbus:/run/dbus:ro
